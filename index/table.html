@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--pc 화면처럼 모바일 화면을 보여줌 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--pc 화면처럼 모바일 화면을 보여줌    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Table 연습</title>
     <style>
-        h1 {
-            background-color: green;
-            color: white;
-            font-weight: bold;
+      h1 {
+        background-color: green;
+        color: white;
+        font-weight: bold;
 
-            padding: 30px; /* --> 내부의 여백 */          
-            margin: 0px; /* --> 주변의 여백 */
+        padding: 30px; /* --> 내부의 여백 */
+        margin: 0px; /* --> 주변의 여백 */
 
-            text-align: center;
-
-        }
-         table {
-            /* 
+        text-align: center;
+      }
+      table {
+        /* 
             table tag 전체 폭(width)를 보이는 화면의 70% 만큼의 크기로 설정하라
             
             크기를 px로 지정하면 화면의 크기에 관계없이 
@@ -27,9 +26,9 @@
              반응형 웹을 준비한다면 width를 %로 지정한다
 
             */
-             width: 80%;
+        width: 80%;
 
-             /*
+        /*
               margin, padding
                값을 1개만 설정 : top, right, bottom, left가 같은 값
                값을 2개 설정 : top-bottom, right-left 가 같은 값
@@ -44,36 +43,34 @@
                 margin-right : 10px;
                 동일한 설정 >> margin : 5px 10px 2px 3px;
              */
-             margin: 10px auto;
-             background-color: #aaa;
-             border-collapse: collapse; /* table의 cell 간의 여백 제거 */
-             border: 1px solid blue;
+        margin: 10px auto;
+        background-color: #aaa;
+        border-collapse: collapse; /* table의 cell 간의 여백 제거 */
+        border: 1px solid blue;
+      }
 
-         }
-
-         /*
+      /*
          컴마(,)로 여러 Object 설정하기
             td tag 와 th tag에 공통 속성(style)을 지정하자
          */
-         
-         td,th {
 
-             border: 1px solid green;
-             padding: 5px;
-         }
+      td,
+      th {
+        border: 1px solid green;
+        padding: 5px;
+      }
 
-         /* CSS 3 속성 */
-         /* tr tag list들을 지정하겠다 */
-         /* row가 짝수열만 바탕색을 밝은 회색으로 변경 */ 
-         /* CSS 3의 가상 클래스 속성 */
-         /* tr tag list 들 중에서 짝수 row에 바탕색 지정*/
-         tr:nth-child(even) {
-             background-color: #ccc;
-
-         }
+      /* CSS 3 속성 */
+      /* tr tag list들을 지정하겠다 */
+      /* row가 짝수열만 바탕색을 밝은 회색으로 변경 */
+      /* CSS 3의 가상 클래스 속성 */
+      /* tr tag list 들 중에서 짝수 row에 바탕색 지정*/
+      tr:nth-child(even) {
+        background-color: #ccc;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Table 연습</h1>
     <!-- 
         table tag : 표 형식의 UI Layout을 만드는 DOM 요소
@@ -83,76 +80,73 @@
          row가 3개 이고, row가 포함하는 date가 5개인 표를 layout 설정
     -->
     <table>
-        <thead>
+      <thead>
         <tr>
-             <th>학번</th>
-             <th>이름</th>
-             <th>전화번호</th>
-             <th>주소</th>
-             <th>학과</th>
-             <th>학년</th>
-             <th>부전공</th>
+          <th>학번</th>
+          <th>이름</th>
+          <th>전화번호</th>
+          <th>주소</th>
+          <th>학과</th>
+          <th>학년</th>
+          <th>부전공</th>
         </tr>
-        </thead>
+      </thead>
 
-        <tbody>
+      <tbody>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td colspan="3">3</td>
-            <td>4</td>
-            <td>5</td>
-        </tr>
-
-        <tr>
-            <td>가</td>
-            <td colspan="4">나</td>
-            <td>다</td>
-            <td>라</td>
+          <td>1</td>
+          <td>2</td>
+          <td colspan="3">3</td>
+          <td>4</td>
+          <td>5</td>
         </tr>
 
         <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
-        </tr>
-        <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
+          <td>가</td>
+          <td colspan="4">나</td>
+          <td>다</td>
+          <td>라</td>
         </tr>
 
         <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
         </tr>
 
         <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
         </tr>
 
-        </tbody>
-
+        <tr>
+          <td>A</td>
+          <td>B</td>
+          <td>C</td>
+          <td>D</td>
+          <td>E</td>
+          <td>F</td>
+          <td>G</td>
+        </tr>
+      </tbody>
     </table>
-    
-</body>
+  </body>
 </html>
