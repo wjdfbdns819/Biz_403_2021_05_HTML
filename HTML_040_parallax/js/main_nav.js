@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // nav와 selection을 별도의 변수로 만들기
   const nav = document.querySelector("nav#main_nav");
-  const conts = document.querySelector("section#contents");
+  const dot = document.querySelector("nav#dot_nav");
 
   // 이벤트 핸들러 함수 선언
   const navClick = (e) => {
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // className art1 -> #art1을 찾아서 선택
       let art = document.querySelector("#" + className);
+      console.log(className);
 
       // art 객체(Dom 객체)의 현재 위치, 모양값을 getter 해달라
       let bound = art.getBoundingClientRect();
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // nav에 click event 설정
   nav.addEventListener("click", navClick);
-
+  dot.addEventListener("click", navClick);
   /*
   scroll event는 화면이 스크롤 되는 동안에
   엄청나게 많은 event를 발생한다
@@ -63,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollTop_nav_tick = (e) => {
     if (!ticking) {
       ticking = true;
-      console.log(e.target.tagName);
 
       // 화면에 fix된 nav box의 하단 라인 좌표를 조회
       let nav_bound = nav.getBoundingClientRect();
@@ -80,16 +80,24 @@ document.addEventListener("DOMContentLoaded", () => {
       // id 값을 추출하여(art1, art2)
       // li 중에 클래스가 id값과 같은 tag를 선택
       // li.art1와 같은 selector 이름 만들기
-      nav.querySelector("ul li." + art.id);
+      let li = nav.querySelector("ul li." + art.id);
       // 그리고 선택된 tag active 클래스를 추가하라
 
       // 혹시 active 클래스가 설정된 li tag가 있으면
       // active 클래스를 제거하고,
-      let actives = nav.querySelector("ul li.active");
+      let actives = nav.querySelectorAll("ul li.active");
       for (let i = 0; i < actives.length; i++) {
-        actives[i].classList.remove("acitve");
+        actives[i].classList.remove("active");
       }
       li.classList.add("active");
+
+      let dot_active = dot.querySelectorAll("ul li.active");
+      for (let i = 0; i < dot_active.length; i++) {
+        dot_active[i].classList.remove("active");
+      }
+
+      let dot_li = dot.querySelector("ul li." + art.id);
+      dot_li.classList.add("active");
 
       ticking = false;
     }
@@ -97,4 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 현재 보고있는 화면이 스크롤되면
   document.addEventListener("scroll", scrollTop_nav_tick);
+
+  document
+    .querySelector("nav#main_nav .fa-bars")
+    .addEventListener("click", (e) => {
+      document.querySelector("nav#main_nav ul").classList.toggle("drop");
+    });
 });

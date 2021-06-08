@@ -12,6 +12,11 @@ nav#main_nav h1 {
   color: white;
   font-size: 40px;
 }
+
+nav#main_nav div {
+  margin-left: auto;
+}
+
 nav#main_nav ul {
   /*
       container를 flex로 하고 child의 
@@ -35,4 +40,20 @@ nav#main_nav li.active {
 }
 nav#main_nav li:hover {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav#main_nav div.menu_toggle {
+  width: 100%;
+  padding: 22px;
+  text-align: right;
+  color: white;
+  font-size: 20px;
+
+  /* 보이지 않도록 설정 */
+  display: none;
+}
+
+nav#main_nav ul.drop {
+  visibility: visible;
+  height: 50vh;
 }

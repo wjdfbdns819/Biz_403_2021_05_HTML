@@ -1,0 +1,27 @@
+/* media 설정은 항상 Css 맨 아래쪽에 있어야 함*/
+@media screen and (max-width: 768px) {
+  nav#main_nav div.menu_toggle {
+    display: block;
+  }
+
+  nav#main_nav h1 {
+    font-size: 20px;
+  }
+
+  nav#main_nav ul {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+    height: 0vh;
+    transition: height 0.5s ease-out;
+  }
+
+  nav#dot_nav {
+    display: none;
+  }
+
+  #contents article {
+    font-size: 20px;
+    line-height: 50vh;
+  }
+}
